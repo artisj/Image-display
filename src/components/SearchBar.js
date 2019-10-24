@@ -11,10 +11,12 @@ class SearchBar extends React.Component {
   }
 */
 
-  onFormSubmit(event) {
+  // use the arrow function to avoid the undefined
+  // this value
+  onFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.term);
-  }
+    this.props.onSubmit(this.state.term);
+  };
 
   // input is a controlled element by taking the changed value
   // setting the state and using the state to update the input
